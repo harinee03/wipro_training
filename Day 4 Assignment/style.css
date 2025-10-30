@@ -1,0 +1,30 @@
+/*background and font style for the entire page */
+body{
+    color: #320303;
+    background-color:rgb(216, 223, 228);
+    font-style: italic;
+}
+/* Styling the card */
+.card{
+    background-color: rgb(207, 218, 227);
+    transition: transform 0.3s, box-shadow 0.3s;
+    color: #320303;
+}
+/* hover effect to enlarge the card slightly */
+.card:hover{
+    transform:scale(1.05);
+}
+/* Style for buttons */
+.btn
+{
+    background-color: rgb(118, 153, 173);
+    color: #320303;
+}
+/* Button hover color */
+.btn:hover{
+    background-color: rgb(100, 139, 161);
+}
+/* Center the text inside the output section */
+#output{
+    text-align: center;
+}

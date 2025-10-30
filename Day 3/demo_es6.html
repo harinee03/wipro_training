@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+ 
+<script>
+//        const num1=[1,2,3];
+//     const num2=[...num1,4,5,6];
+//     console.log(num2);
+//     const a1={name:"harinee",age:22};
+//     const a2={...a1,id:1};
+// console.log(a2);
+// const a3={...a2,city:"nagercoil"};
+// document.write(JSON.stringify(a3));
+
+
+// Arrow function
+const sum=(a,b)=>a*b;
+document.write(JSON.stringify(sum(2,3))+"<br>");
+
+const square=(a)=>a*a;
+document.write(JSON.stringify(square(4))+"<br>");
+ class Person {
+            constructor(name, age) {
+                this.name = name;
+                this.age = age;
+            }
+     
+            greet() { 
+                console.log(`Hello, my name is ${this.name} and I am ${this.age} years old.`);
+            }
+        }
+      
+        const alice = new Person("Alice", 25);
+        alice.greet(); 
+alert(`Person Details:\nName: ${alice.name}\nAge: ${alice.age}`);
+
+        const bob = new Person("Bob", 30);
+        bob.greet(); 
+        alert(`Person Details:\nName: ${bob.name}\nAge: ${bob.age}`);
+
+
+const map=new Map();
+map.set("name","harinee");
+map.set("age",22);
+map.forEach((value,key)=>{console.log(`${key}:${value}`)});
+const set=new Set();
+set.add(1);
+set.add("harinee");
+set.add(1);
+set.add(2);
+set.forEach(value=>{document.write(value)});
+   </script>
+</body>
+</html>

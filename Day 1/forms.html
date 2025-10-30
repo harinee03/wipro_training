@@ -1,0 +1,98 @@
+<!-- IN HTML we Use Forms for collecting user input as well as for user authentication -->
+ <!-- Ex registration form
+  Login Form with authentication & Authorization 
+  Steps for IMPLEMENTING html FORMS 
+  STEP 1:  CREATE A SAMPLE html APPLICATION 
+  STEP 2:  ADD FORM ELEMENTS LIKE INPUT, SELECT, TEXTAREA, BUTTONS ETC
+  STEP 3:  ADD FORM ATTRIBUTES LIKE ACTION, METHOD ETC Get / post
+    STEP 4:  TEST THE FORM IN BROWSER-->
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            FORMS
+        </title>
+    </head>
+    <body>
+<style>
+    .form1{
+        margin-left:  100px;
+        padding: 12px;
+        width:auto;
+        height:auto;
+        border: 2px solid black;
+        margin: 100px;
+       
+      
+
+    }
+</style>
+        <h1>FORMS</h1>
+        <div class="form1">
+         <form action="basics.html" method="post" novalidate>
+        <label for="fname">First Name:</label><br>
+        <input type="text" id="fname" name="fname" ><br><br>
+        
+        <label for="lname">Last Name:</label><br>
+        <input type="text" id="lname" name="lname"><br><br>
+        
+        <label for="email">Email:</label><br>
+        <input type="email" id="email" name="email"><br><br>
+        
+        <label for="password">Password:</label><br>
+        <input type="password" id="password" name="password"><br><br>
+        
+     <label for="quantity">Quantity:</label><br>
+        <input type="number" id="quantity" name="quantity"><br><br>
+
+          <label for="searchitems">Search:</label><br>
+        <input type="search" id="searchitems" name="searchitems"><br><br>
+
+          <label for="date">Date</label><br>
+        <input type="date" id="date" name="date" min="2020-10-02" max="2020-10-12"><br><br>
+
+
+          <label for="address">Address</label><br>
+       <textarea id="address" rows="5" cols="16" name="address"></textarea>"<br><br>
+
+        <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike">
+ <label for="vehicle1"> I have a bike</label><br>
+
+<input type="checkbox" id="vehicle2" name="vehicle2" value="Car">
+<label for="vehicle2"> I have a car</label><br>
+
+<input type="checkbox" id="vehicle3" name="vehicle3" value="Boat" checked>
+<label for="vehicle3"> I have a boat</label>
+
+<p>Choose your subject:</p>
+<label for="math">Math</label><br>
+<input type="radio" id="math" name="subject" value="math" checked>
+
+<label for="physics">Physics</label><br>
+<input type="radio" id="physics" name="subject" value="physics">
+
+<label for="chemistry">Chemistry</label><br>
+<input type="radio" id="chemistry" name="subject" value="chemistry">
+
+
+        <label for="gender">Gender:</label><br>
+        <select id="gender" name="gender">
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+            <option value="other">Other</option>
+        </select><br><br>
+
+               <input type="reset" value="reset">
+        <input type="submit" value="Submit">
+        </div>
+    </form>
+    <video controls width="250">
+<source src="movie.mp4" type="video/mp4">
+Your browser does not support the video tag.
+</video>
+<audio controls>
+<source src="audio.mp3" type="audio/mpeg">
+Your browser does not support the audio element.
+</audio>
+    </body>
+</html>

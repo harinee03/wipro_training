@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <title>Login to Spring Flowers School</title>
+    <link rel="icon" href="school_image.jpg">
+    <style>
+       body{
+        background-color: rgb(198, 224, 233);
+       }
+       #login{
+        background-color: rgb(123, 123, 161);
+       }
+       #box{
+        background-color: aliceblue;
+        border-radius: 12%;
+       }
+    </style>
+</head>
+<body class="d-flex align-items-center justify-content-center vh-100">
+<div class="border p-5 text-center " id="box">
+    <h4>Welcome to Spring Flowers School</h4>
+    <h5>Login Here</h5>
+    <form onsubmit="return validatelogin()">
+        
+        <label for="username">User Name: </label>
+        <input type="text" id="username" class="form-control mb-3">
+        <label for="password">Password: </label>
+        <input type="password" id="password" class="form-control mb-3">
+       <button type="submit" class="btn" id="login">Login</button>
+    </form>
+</div>
+<script>
+    function validatelogin(){
+    const username=document.getElementById("username").value.trim();
+    const password=document.getElementById("password").value.trim();
+    if(username=="" || password=="")
+{
+    alert("Please enter Username & Password");
+    return false;
+}
+if(username=="student" && password=="12345"){
+    alert("Login Successfull");
+    window.location.href="day2_assignment.html";
+    return false;
+}
+else{
+    alert("Invalid Username or Password. Please try again");
+    return false;
+}
+    }
+</script>
+</body>
+</html>
