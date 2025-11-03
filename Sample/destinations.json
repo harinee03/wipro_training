@@ -1,0 +1,26 @@
+[
+  {
+    "name": "Paris",
+    "country": "France",
+    "price": 1200,
+    "image": "https://source.unsplash.com/800x500/?paris"
+  },
+  {
+    "name": "Bali",
+    "country": "Indonesia",
+    "price": 800,
+    "image": "https://source.unsplash.com/800x500/?bali"
+  },
+  {
+    "name": "New York",
+    "country": "USA",
+    "price": 2500,
+    "image": "https://source.unsplash.com/800x500/?newyork"
+  },
+  {
+    "name": "Tokyo",
+    "country": "Japan",
+    "price": 3500,
+    "image": "https://source.unsplash.com/800x500/?tokyo"
+  }
+]

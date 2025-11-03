@@ -1,0 +1,188 @@
+-- User Story 1 — Database Setup (DDL)
+-- Department(DeptID, DeptName, Location)
+CREATE TABLE Department (
+    DeptID INT PRIMARY KEY,
+    DeptName VARCHAR(100) NOT NULL,
+    Location VARCHAR(100)
+);
+
+-- Employee(EmpID, EmpName, Gender, DOB, HireDate, DeptID)
+CREATE TABLE Employee (
+    EmpID INT PRIMARY KEY,
+    EmpName VARCHAR(100) NOT NULL,
+    Gender CHAR(1) CHECK (Gender IN ('M', 'F')),                
+    DOB DATE NOT NULL,
+    HireDate DATE NOT NULL,             
+    DeptID INT,
+    FOREIGN KEY (DeptID) REFERENCES Department(DeptID)
+);
+--  Project(ProjectID, ProjectName, DeptID, StartDate, EndDate)
+CREATE TABLE Project (
+    ProjectID INT PRIMARY KEY,
+    ProjectName VARCHAR(100) NOT NULL,
+    DeptID INT,
+    StartDate DATE NOT NULL,
+    EndDate DATE,
+    FOREIGN KEY (DeptID) REFERENCES Department(DeptID)
+);
+-- Performance(EmpID, ProjectID, Rating, ReviewDate)
+CREATE TABLE Performance (
+    EmpID INT,
+    ProjectID INT,
+    Rating INT CHECK (Rating BETWEEN 1 AND 10),
+    ReviewDate DATE NOT NULL,
+    PRIMARY KEY (EmpID, ProjectID),
+    FOREIGN KEY (EmpID) REFERENCES Employee(EmpID),
+    FOREIGN KEY (ProjectID) REFERENCES Project(ProjectID)
+);
+
+--  Reward(EmpID, RewardMonth, RewardAmount)
+CREATE TABLE Reward (
+    EmpID INT,
+    RewardMonth DATE,
+    RewardAmount DECIMAL(10, 2) CHECK (RewardAmount >= 0),
+    PRIMARY KEY (EmpID, RewardMonth),
+    FOREIGN KEY (EmpID) REFERENCES Employee(EmpID)
+);
+-- Create an index on EmpName and DeptID to optimize frequent lookups.
+CREATE INDEX idx_empname_deptid ON Employee(EmpName, DeptID);
+
+-- User Story 2 — Insert and Manage Data (DML)
+
+-- Insert at least 5 records each into Department, Employee, Project, Performance, and Reward
+-- tables.
+
+INSERT INTO Department (DeptID, DeptName, Location) VALUES
+(1, 'Human Resources', 'Mumbai'),
+(2, 'Engineering', 'Bangalore'),
+(3, 'Marketing', 'Chennai'),
+(4, 'Sales', 'Hyderabad'),
+(5, 'Finance', 'Pune');
+INSERT INTO Employee (EmpID, EmpName, Gender            
+, DOB, HireDate, DeptID) VALUES
+(101, 'Sri', 'F', '1985-04-12', '2010-06-01', 1),
+(102, 'Kumar', 'M', '1990-08-23', '2012-09-15', 2),
+(103, 'Vimal', 'M', '1988-11-30', '2020-03-20', 3),
+(104, 'Abi', 'F', '1992-02-14', '2018-07-10', 4),
+(105, 'Harinee', 'M', '1983-05-05', '2009-11-25', 5);
+INSERT INTO Project (ProjectID, ProjectName, DeptID, StartDate, EndDate) VALUES
+(201, 'Recruitment Drive', 1, '2023-01-01', '2023-06-30'),
+(202, 'New Product Development', 2, '2023-02-15', '2023-12-31'),
+(203, 'Marketing Campaign', 3, '2023-03-01', '2023-09-30'),
+(204, 'Sales Expansion', 4, '2023-04-10', '2023-10-31'),
+(205, 'Financial Audit', 5, '2023-05-20', '2023-11-30');
+INSERT INTO Performance (EmpID, ProjectID, Rating, ReviewDate) VALUES
+(101, 201, 8, '2023-07-01'),
+(102, 202, 9, '2023-08-15'),
+(103, 203, 7, '2023-10-01'),
+(104, 204, 8, '2023-11-10'),
+(105, 205, 9, '2023-12-05');
+INSERT INTO Reward (EmpID, RewardMonth, RewardAmount) VALUES
+(101, '2023-07-01', 5000.00),
+(102, '2023-08-01', 7450.00),
+(103, '2023-10-01', 6400.00),
+(104, '2023-11-01', 700.00),
+(105, '2023-12-01', 8000.00);
+
+SELECT * FROM Department;
+SELECT * FROM Employee;
+SELECT * FROM Project;
+SELECT * FROM Performance;
+SELECT * FROM Reward;
+-- Update one employee’s department.
+UPDATE Employee
+SET DeptID = 3
+WHERE EmpID = 104;
+
+
+-- Delete one reward record where the amount is less than 1000.
+DELETE FROM Reward
+WHERE RewardAmount < 1000.00;
+
+-- User Story 3 — Generate Insights (DQL, Aggregate and Date
+-- Functions)
+-- Retrieve all employees who joined after 2019-01-01.
+
+SELECT * FROM Employee
+WHERE HireDate > '2019-01-01';
+
+-- Find the average performance rating of employees in each department.
+SELECT D.DeptName, AVG(P.Rating) AS AvgRating
+FROM Performance P  
+JOIN Employee E ON P.EmpID = E.EmpID
+JOIN Department D ON E.DeptID = D.DeptID
+GROUP BY D.DeptName;
+
+-- List employees with their age (use a date function).
+SELECT EmpID,EmpName,DOB,TIMESTAMPDIFF(YEAR, DOB, CURDATE()) AS Age
+FROM employee;
+
+-- Find the total rewards given in the current year.
+
+SELECT SUM(RewardAmount) AS TotalRewards
+FROM Reward WHERE YEAR(RewardMonth) = YEAR(CURDATE());
+
+-- Retrieve employees who have received rewards greater than 2000.
+SELECT E.EmpID, E.EmpName, R.RewardAmount FROM Employee E 
+JOIN Reward R ON E.EmpID = R.EmpID WHERE R.RewardAmount > 2000.00;
+
+-- User Story 4 — Advanced Queries (Joins and Subqueries)
+
+-- Display Employee Name, Department Name, Project Name, and Rating using appropriate joins.
+SELECT E.EmpName, D.DeptName, Pr.ProjectName, Pf.Rating
+FROM Employee E 
+JOIN Department D ON E.DeptID = D.DeptID
+JOIN Performance Pf ON E.EmpID = Pf.EmpID
+JOIN Project Pr ON Pf.ProjectID = Pr.ProjectID;
+
+-- Find the highest-rated employee in each department using a subquery.
+SELECT E.EmpName, D.DeptName, Pf.Rating
+FROM Employee E
+JOIN Department D ON E.DeptID = D.DeptID
+JOIN Performance Pf ON E.EmpID = Pf.EmpID
+WHERE Pf.Rating = (
+    SELECT MAX(Pf2.Rating)
+    FROM Performance Pf2
+    JOIN Employee E2 ON Pf2.EmpID = E2.EmpID
+    WHERE E2.DeptID = E.DeptID
+);
+-- List all employees who have not received any rewards using a subquery.
+SELECT E.EmpID, E.EmpName
+FROM Employee E
+WHERE E.EmpID NOT IN (
+    SELECT R.EmpID FROM Reward R
+);
+-- User Story 5 — Transaction Control and Optimization
+--  Begin a transaction:
+-- Insert a new employee.
+START TRANSACTION;
+INSERT INTO Employee (EmpID, EmpName
+, Gender, DOB, HireDate, DeptID) VALUES
+(106, 'Anita', 'F', '1991-09-09', '2024-01-15', 2);
+
+-- Assign them to a department.
+UPDATE Employee
+SET DeptID = 2
+WHERE EmpID = 106;  
+-- Add their performance record.
+INSERT INTO Performance (EmpID, ProjectID, Rating, ReviewDate) VALUES
+(106, 202, 8, '2024-06-01');
+
+-- Rollback the transaction if any insert fails; otherwise, commit it.
+COMMIT;
+
+-- Analyze a slow query (for example, joining 3–4 tables without an index). Then, re-run it
+-- using indexes and observe improvement using the EXPLAIN command.
+EXPLAIN SELECT E.EmpName, D.DeptName, Pr.ProjectName, Pf.Rating
+FROM Employee E
+JOIN Department D ON E.DeptID = D.DeptID
+JOIN Performance Pf ON E.EmpID = Pf.EmpID
+JOIN Project Pr ON Pf.ProjectID = Pr.ProjectID;
+-- After creating the index idx_empname_deptid, re-run the EXPLAIN command to observe improvements.
+EXPLAIN SELECT E.EmpName, D.DeptName, Pr.ProjectName, Pf.Rating
+FROM Employee E
+JOIN Department D ON E.DeptID = D.DeptID
+JOIN Performance Pf ON E.EmpID = Pf.EmpID
+JOIN Project Pr ON Pf.ProjectID = Pr.ProjectID;
+
+

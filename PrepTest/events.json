@@ -1,0 +1,29 @@
+[
+  {
+    "id": 1,
+    "title": "Live Music Concert",
+    "category": "Music",
+    "date": "2025-11-20",
+    "location": "Chennai Music Arena",
+    "img": "https://source.unsplash.com/800x500/?concert",
+    "description": "A night of live performances by popular bands."
+  },
+  {
+    "id": 2,
+    "title": "Tech Conference 2025",
+    "category": "Conference",
+    "date": "2025-12-05",
+    "location": "IT Convention Center, Bengaluru",
+    "img": "https://source.unsplash.com/800x500/?conference",
+    "description": "Industry leaders discussing AI, Web3 and Cloud."
+  },
+  {
+    "id": 3,
+    "title": "Wedding Expo",
+    "category": "Expo",
+    "date": "2026-01-10",
+    "location": "Grand Banquet Hall, Chennai",
+    "img": "https://source.unsplash.com/800x500/?wedding",
+    "description": "Vendors, designers and planners for dream weddings."
+  }
+]

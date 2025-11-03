@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Eventora — Event Management</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body { scroll-behavior: smooth; }
+    header { background: linear-gradient(90deg,#0d6efd,#6f42c1); color:#fff; padding:48px 0; text-align:center; }
+    header h1 { font-weight:700; }
+    .event-card img { height:200px; object-fit:cover; }
+    footer { background:#212529; color:#fff; padding:18px 0; text-align:center; }
+    .brand { font-weight:700; letter-spacing:0.6px; }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <h1>Eventora</h1>
+      <p class="lead">We craft memorable experiences — concerts, conferences, and weddings</p>
+      <a href="#register" class="btn btn-light btn-lg mt-3">Register Now</a>
+    </div>
+  </header>
+
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+    <div class="container">
+      <a class="navbar-brand brand" href="#">Eventora</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navmenu">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navmenu">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="#upcoming">Upcoming</a></li>
+          <li class="nav-item"><a class="nav-link" href="#highlights">Highlights</a></li>
+          <li class="nav-item"><a class="nav-link" href="dashboard.html">Dashboard</a></li>
+          <li class="nav-item"><a class="nav-link" href="#register">Register</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <main class="container my-5">
+
+    <!-- Upcoming events carousel (Bootstrap component) -->
+    <section id="upcoming" class="mb-5">
+      <h2 class="text-center mb-4">Upcoming Events</h2>
+      <div id="eventCarousel" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner rounded">
+          <div class="carousel-item active">
+         
+            <div class="carousel-caption d-none d-md-block">
+              <h5>Live Music Concert</h5>
+              <p>Feel the rhythm with top bands performing live.</p>
+            </div>
+          </div>
+          <div class="carousel-item">
+           
+            <div class="carousel-caption d-none d-md-block">
+              <h5>Tech Conference 2025</h5>
+              <p>Network with industry leaders and innovators.</p>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div class="carousel-caption d-none d-md-block">
+              <h5>Dream Weddings</h5>
+              <p>Elegant planning for your perfect day.</p>
+            </div>
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#eventCarousel" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon"></span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#eventCarousel" data-bs-slide="next">
+          <span class="carousel-control-next-icon"></span>
+        </button>
+      </div>
+    </section>
+
+    <!-- Highlights (cards) -->
+    <section id="highlights" class="mb-5">
+      <h2 class="text-center mb-4">Event Highlights</h2>
+      <div class="row g-4">
+        <article class="col-md-4">
+          <div class="card event-card h-100">
+            <div class="card-body">
+              <h5 class="card-title">Creative Decorations</h5>
+              <p class="card-text">Unique themes & bespoke styling to match your vision.</p>
+            </div>
+          </div>
+        </article>
+        <article class="col-md-4">
+          <div class="card event-card h-100">
+ 
+            <div class="card-body">
+              <h5 class="card-title">Delicious Catering</h5>
+              <p class="card-text">Customized menus crafted for each event and palette.</p>
+            </div>
+          </div>
+        </article>
+        <article class="col-md-4">
+          <div class="card event-card h-100">
+          
+            <div class="card-body">
+              <h5 class="card-title">Premium Lighting</h5>
+              <p class="card-text">Tech-driven lighting that elevates the experience.</p>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- Register (form with validation) -->
+    <section id="register" class="mb-5">
+      <h2 class="text-center mb-4">Register for an Event</h2>
+      <div class="row justify-content-center">
+        <div class="col-lg-6">
+          <form id="regForm" class="needs-validation border rounded p-4 bg-light" novalidate>
+            <div class="mb-3">
+              <label for="fullName" class="form-label">Full Name</label>
+              <input id="fullName" class="form-control" type="text" required>
+              <div class="invalid-feedback">Please enter your full name.</div>
+            </div>
+            <div class="mb-3">
+              <label for="emailAddr" class="form-label">Email address</label>
+              <input id="emailAddr" class="form-control" type="email" required>
+              <div class="invalid-feedback">Please provide a valid email.</div>
+            </div>
+            <div class="mb-3">
+              <label for="selectEvent" class="form-label">Event</label>
+              <select id="selectEvent" class="form-select" required>
+                <option value="">Choose...</option>
+                <option>Live Music Concert</option>
+                <option>Tech Conference 2025</option>
+                <option>Wedding Expo</option>
+              </select>
+              <div class="invalid-feedback">Select an event.</div>
+            </div>
+            <div class="mb-3">
+              <label for="message" class="form-label">Message (optional)</label>
+              <textarea id="message" class="form-control" rows="3"></textarea>
+            </div>
+            <div class="d-grid">
+              <button type="submit" class="btn btn-primary">Submit Registration</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="container">
+      <p class="mb-0">&copy; 2025 Eventora • Crafted with Bootstrap</p>
+    </div>
+  </footer>
+
+  <!-- Modal: Registration Success (Bootstrap component) -->
+  <div class="modal fade" id="successModal" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Registration Received</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body">
+          <p>Thank you! We have received your registration. We will contact you via email with details.</p>
+        </div>
+        <div class="modal-footer">
+          <button class="btn btn-primary" data-bs-dismiss="modal">OK</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    // client-side validation
+    (function () {
+      'use strict';
+      const form = document.getElementById('regForm');
+      form.addEventListener('submit', function (e) {
+        if (!form.checkValidity()) {
+          e.preventDefault();
+          e.stopPropagation();
+        } else {
+          e.preventDefault(); // prevent actual submit for demo
+          const modal = new bootstrap.Modal(document.getElementById('successModal'));
+          modal.show();
+          form.reset();
+          form.classList.remove('was-validated');
+        }
+        form.classList.add('was-validated');
+      }, false);
+    })();
+  </script>
+</body>
+</html>

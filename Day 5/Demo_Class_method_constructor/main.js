@@ -1,4 +1,3 @@
-"use strict";
 // main.ts - Demonstrates usage of Person and Student classes
 Object.defineProperty(exports, "__esModule", { value: true });
 var person_js_1 = require("./person.js");

@@ -1,0 +1,11 @@
+[{
+  "_id": {
+    "$oid": "6904470322c5e1464d58f3af"
+  },
+  "StudentID": "S101",
+  "StudentName": "Asha Gupta",
+  "Course": "Database Systems",
+  "Instructor": "Dr. Mehta",
+  "Department": "Computer Science",
+  "Grade": "A"
+}]

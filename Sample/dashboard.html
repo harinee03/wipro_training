@@ -1,0 +1,113 @@
+ <!-- Develop an interactive dashboard that displays destinations fetched from a JSON file. Allow filtering
+ by country or price range. Simulate live updates using Fetch API.
+ 
+ ES6 Features
+ Use arrays, objects, and loops effectively
+ 
+ Use let/const, arrow functions, destructuring, and template literals 5
+ Fetch API + Async/Await Simulate API calls and handle errors
+ DOM Manipulation
+ Dynamically render cards and update on filter actions
+ 
+ 
+Code Readability
+ 
+ Modular, indented, and commented code -->
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Travel Dashboard</title>
+     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+     <style>
+         body { background:#f8f9fa; }
+         .destination-card { box-shadow:0 4px 8px rgba(0,0,0,0.1); border-radius:10px; overflow:hidden; }
+            .destination-card img { width:100%; }
+             .destination-card h5 { font-size:1.25rem; margin:12px 0 6px; }
+                .destination-card p { font-size:0.9rem; color:#555; margin:0 12px 12px; }
+                .filter-section { margin:20px 0; }
+            .filter-section label { margin-right:10px; font-weight:600; }
+            .filter-section select { margin-right:20px; }
+                .carousel-caption { background:rgba(0,0,0,0.5); border-radius:10px; }
+            .carousel-caption h5, .carousel-caption p { color:#fff; }
+            .nav a { color:#000; font-weight:600; text-decoration:none; }
+            .nav a:hover { text-decoration:underline; }
+
+
+
+                </style>
+    </head>
+    <body>
+        <div class="container my-4">
+            <header class="d-flex justify-content-between align-items-center mb-4">
+                <h1 class="brand">Travel Explorer</h1>
+                <nav>
+                    <a href="index.html" class="me-3">Home</a>
+                    
+                </nav>
+            </header>
+            <section class="filter-section">
+                <label for="countryFilter">Country:</label>
+                <select id="countryFilter">
+                    <option value="all">All</option>
+                    <option value="France">France</option>
+                    <option value="Indonesia">Indonesia</option>
+                    <option value="USA">USA</option>
+                </select>
+                <label for="priceFilter">Price Range:</label>
+                <select id="priceFilter">
+                    <option value="all">All</option>
+                    <option value="1000">Budget (&lt; $1000)</option>
+                    <option value="3000">$1000 - $3000</option>
+                    <option value="10000">&gt; $3000</option>
+                </select>
+            </section>
+            <section id="destinations" class="row g-4">
+                <!-- Destination cards will be dynamically inserted here -->
+            </section>
+        
+
+            <section class="my-5">
+                <h2 class="mb-3">Special Offers</h2>
+                <div id="offersCarousel" class="carousel slide" data-bs-ride="carousel">
+                    <div class="carousel-inner rounded">
+                        <div class="carousel-item active">
+                            <img src="school_image.jpg" class="d-block w-100" alt="Offer 1">
+                            <div class="carousel-caption d-none d-md-block">
+                                <h5>Summer Getaway</h5>
+                                <p>Up to 30% off on selected beach destinations.</p>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <img src="school_image.jpg" class="d-block w-100" alt="Offer 2">
+                            <div class="carousel-caption d-none d-md-block">
+                                <h5>City Breaks</h5>
+                                <p>Explore top cities with exclusive discounts.</p>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <img src="school_image.jpg" class="d-block w-100" alt="Offer 3">
+                            <div class="carousel-caption d-none d-md-block">
+                                <h5>Adventure Trips</h5>
+                                <p>Book now and save on thrilling adventures.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#offersCarousel" data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#offersCarousel" data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                    </button>
+                </div>
+            </section>
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist
+/umd/bootstrap.bundle.min.js"></script>
+        <script src="script.js"></script>
+    </body>
+</html>
+
