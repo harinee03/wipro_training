@@ -1,22 +1,4 @@
-//  Create a TypeScript module for managing customer booking details. Demonstrate the use of
-//  interfaces, enums, decorators, and tuples. Compile the TypeScript file to JavaScript.
-//  Criteria
-//  Description
-//  Interface & Class Design Define interfaces and implement classes with inheritance 5
-//  Type Safety
-//  Decorators
-//  Iterators & Modularity
-//  Compilation
-//  Total
-//  Use annotations, enums, and tuples effectively
-//  Implement a custom decorator (e.g., log booking info)
-//  Use iterators and maintain modular file structure
-//  Code compiles successfully using ts
-//  5
-// CustomerModule.ts
-// To compile: tsc --target ES2017 --experimentalDecorators CustomerModule.ts
-// Ensure tsconfig or command includes "experimentalDecorators": true if using tsconfig.json
-// Interface for customer
+
 interface ICustomer {
     id: number;
     name: string;
