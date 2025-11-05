@@ -1,0 +1,30 @@
+{
+  "dependencies": {
+    "body-parser": "^2.2.0",
+    "express": "^5.1.0",
+    "mongodb": "^6.20.0",
+    "mysql2": "^3.15.3"
+  },
+  "devDependencies": {
+    "@types/mongodb": "^4.0.6",
+    "@types/node": "^24.10.0"
+  },
+  "name": "wipro-training",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/harinee03/wipro_training.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/harinee03/wipro_training/issues"
+  },
+  "homepage": "https://github.com/harinee03/wipro_training#readme",
+  "description": ""
+}

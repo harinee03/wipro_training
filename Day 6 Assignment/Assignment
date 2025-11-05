@@ -178,11 +178,18 @@ FROM Employee E
 JOIN Department D ON E.DeptID = D.DeptID
 JOIN Performance Pf ON E.EmpID = Pf.EmpID
 JOIN Project Pr ON Pf.ProjectID = Pr.ProjectID;
--- After creating the index idx_empname_deptid, re-run the EXPLAIN command to observe improvements.
-EXPLAIN SELECT E.EmpName, D.DeptName, Pr.ProjectName, Pf.Rating
+
+CREATE INDEX idx_emp_deptid ON Employee(DeptID);
+CREATE INDEX idx_perf_empid ON Performance(EmpID);
+CREATE INDEX idx_perf_projectid ON Performance(ProjectID);
+CREATE INDEX idx_dept_deptid ON Department(DeptID);
+CREATE INDEX idx_project_projectid ON Project(ProjectID);
+
+
+
+EXPLAIN
+SELECT E.EmpName, D.DeptName, Pr.ProjectName, Pf.Rating
 FROM Employee E
 JOIN Department D ON E.DeptID = D.DeptID
 JOIN Performance Pf ON E.EmpID = Pf.EmpID
 JOIN Project Pr ON Pf.ProjectID = Pr.ProjectID;
-
-

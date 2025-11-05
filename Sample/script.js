@@ -24,7 +24,7 @@ const renderDestinations = (destinationsToRender) => {
         card.className = 'col-md-4';
         card.innerHTML = `
             <div class="card destination-card">
-                <img src="${image}" class="card-img-top" alt="${name}">
+            
                 <div class="card-body">
                     <h5 class="card-title">${name}</h5>
                     <p class="card-text">Country: ${country}</p>
@@ -54,11 +54,24 @@ const filterDestinations = () => {
     let filtered = destinations;
 
     // Filter by country
+    if (selectedCountry && selectedCountry !== "all") {
+        filtered = filtered.filter(dest => dest.country === selectedCountry);
+    }
 
-     if (selectedCountry)
-         { filtered = filtered.filter(dest => dest.country === selectedCountry); } 
-     if (selectedPrice) { filtered = filtered.filter(dest => dest.price <= parseInt(selectedPrice)); } 
-     renderDestinations(filtered); };
+    // Filter by price range
+    if (selectedPrice && selectedPrice !== "all") {
+        if (selectedPrice === "1000") {
+            filtered = filtered.filter(dest => dest.price < 1000);
+        } else if (selectedPrice === "3000") {
+            filtered = filtered.filter(dest => dest.price >= 1000 && dest.price <= 3000);
+        } else if (selectedPrice === "10000") {
+            filtered = filtered.filter(dest => dest.price > 3000);
+        }
+    }
+
+    renderDestinations(filtered);
+};
+
 
 // Event listeners for filters
 countryFilter.addEventListener('change', filterDestinations);

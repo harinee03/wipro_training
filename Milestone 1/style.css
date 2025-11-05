@@ -1,0 +1,38 @@
+/* Body styling */
+body {
+     font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue",Arial;
+    background-color: #dde7f1;
+    color: #131516;
+    }
+/* Header and Footer styling */
+header
+{
+    background-color: #343a40;
+    padding: 1rem 0;
+}
+footer
+{
+    background-color: #3e454b;
+    padding: 1rem 0;
+    text-align: center;
+    margin-top: 2rem;
+    font-size: 0.9rem;
+    color: #eaecf1;
+}
+/* product card hover */
+.product-card {
+  transition: transform .18s ease, box-shadow .18s ease;
+  border: none;
+}
+.product-card:hover {
+  transform: translateY(-6px) scale(1.01);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.08);
+}
+
+/* image aspect */
+.card-img-top { height: 180px; object-fit: cover; }
+
+/* small screens tweak */
+@media (max-width: 576px) {
+  .card-img-top { height: 140px; }
+}

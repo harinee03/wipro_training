@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Eventora — Event Management</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <style>
+    body { scroll-behavior: smooth; }
+    header { background: linear-gradient(90deg,#0d6efd,#6f42c1); color:#fff; padding:48px 0; text-align:center; }
+    header h1 { font-weight:700; }
+    .event-card img { height:200px; object-fit:cover; }
+    footer { background:#212529; color:#fff; padding:18px 0; text-align:center; }
+    .brand { font-weight:700; letter-spacing:0.6px; }
+
+    /* ✅ Fix for carousel visibility */
+    #eventCarousel img {
+      width: 100%;
+      height: 400px;
+      object-fit: cover;
+    }
+
+    /* ✅ Make navigation arrows visible */
+    .carousel-control-prev-icon,
+    .carousel-control-next-icon {
+      filter: invert(1) grayscale(100);
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <h1>Eventora</h1>
+      <p class="lead">We craft memorable experiences — concerts, conferences, and weddings</p>
+      <a href="#register" class="btn btn-light btn-lg mt-3">Register Now</a>
+    </div>
+  </header>
+  
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+    <div class="container">
+      <a class="navbar-brand brand" href="#">Eventora</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navmenu">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navmenu">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="#upcoming">Upcoming</a></li>
+          <li class="nav-item"><a class="nav-link" href="#highlights">Highlights</a></li>
+          <li class="nav-item"><a class="nav-link" href="dashboard.html">Dashboard</a></li>
+          <li class="nav-item"><a class="nav-link" href="#register">Register</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  
+  <main class="container my-5">
+    <!-- Upcoming events carousel -->
+    <section id="upcoming" class="mb-5">
+      <h2 class="text-center mb-4">Upcoming Events</h2>
+      <div id="eventCarousel" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner rounded">
+          <div class="carousel-item active">
+            <img src="school_image.jpg" class="d-block w-100" alt="Live Music Concert">
+            <div class="carousel-caption d-none d-md-block">
+              <h5>Live Music Concert</h5>
+              <p>Feel the rhythm with top bands performing live.</p>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <img src="https://via.placeholder.com/900x400?text=Tech+Conference+2025" class="d-block w-100" alt="Tech Conference 2025">
+            <div class="carousel-caption d-none d-md-block">
+              <h5>Tech Conference 2025</h5>
+              <p>Network with industry leaders and innovators.</p>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <img src="https://via.placeholder.com/900x400?text=Dream+Weddings" class="d-block w-100" alt="Dream Weddings">
+            <div class="carousel-caption d-none d-md-block">
+              <h5>Dream Weddings</h5>
+              <p>Elegant planning for your perfect day.</p>
+            </div>
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#eventCarousel" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon"></span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#eventCarousel" data-bs-slide="next">
+          <span class="carousel-control-next-icon"></span>
+        </button>
+      </div>
+    </section>
+
+    <!-- Highlights section -->
+    <section id="highlights" class="mb-5">
+      <h2 class="text-center mb-4">Event Highlights</h2>
+      <div class="row g-4">
+        <div class="col-md-4">
+          <div class="card event-card h-100">
+            <img src="https://via.placeholder.com/400x200?text=Concert" class="card-img-top" alt="Concert">
+            <div class="card-body">
+              <h5 class="card-title">Live Music Concert</h5>
+              <p class="card-text">Experience electrifying performances by top artists.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card event-card h-100">
+            <img src="https://via.placeholder.com/400x200?text=Conference" class="card-img-top" alt="Conference">
+            <div class="card-body">
+              <h5 class="card-title">Tech Conference 2025</h5>
+              <p class="card-text">Engage with thought leaders and innovators in tech.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card event-card h-100">
+            <img src="https://via.placeholder.com/400x200?text=Wedding" class="card-img-top" alt="Wedding">
+            <div class="card-body">
+              <h5 class="card-title">Dream Weddings</h5>
+              <p class="card-text">Plan your perfect day with our expert services.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Registration Form -->
+    <section id="register" class="mb-5">
+      <h2 class="text-center mb-4">Register for an Event</h2>
+      <form class="mx-auto" style="max-width:600px;" novalidate>
+        <div class="mb-3">
+          <label for="name" class="form-label">Full Name</label>
+          <input type="text" class="form-control" id="name" required>
+          <div class="invalid-feedback">Please enter your name.</div>
+        </div>
+        <div class="mb-3">
+          <label for="email" class="form-label">Email address</label>
+          <input type="email" class="form-control" id="email" required>
+          <div class="invalid-feedback">Please enter a valid email.</div>
+        </div>
+        <div class="mb-3">
+          <label for="eventSelect" class="form-label">Select Event</label>
+          <select class="form-select" id="eventSelect" required>
+            <option value="" disabled selected>Select an event</option>
+            <option value="concert">Live Music Concert</option>
+            <option value="conference">Tech Conference 2025</option>
+            <option value="wedding">Dream Weddings</option>
+          </select>
+          <div class="invalid-feedback">Please select an event.</div>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+    </section>
+  </main>
+
+  <footer class="bg-dark text-white text-center py-3">
+    <div class="container">
+      <p class="mb-0">&copy; 2025 Eventora. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+  <script>
+    // Bootstrap form validation
+    (function () {
+      'use strict';
+      var forms = document.querySelectorAll('form');
+      Array.prototype.slice.call(forms).forEach(function (form) {
+        form.addEventListener('submit', function (event) {
+          if (!form.checkValidity()) {
+            event.preventDefault();
+            event.stopPropagation();
+          }
+          form.classList.add('was-validated');
+        }, false);
+      });
+    })();
+
+    // ✅ Explicitly initialize carousel
+    const myCarouselElement = document.querySelector('#eventCarousel');
+    const carousel = new bootstrap.Carousel(myCarouselElement, {
+      interval: 3000,
+      ride: 'carousel'
+    });
+  </script>
+</body>
+</html>

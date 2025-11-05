@@ -1,0 +1,12 @@
+[
+  {"id":1,"name":"Wireless Headphones","category":"Electronics","price":2499,"image":"headphone.jpeg"},
+  {"id":2,"name":"Denim Jacket","category":"Clothing","price":1799,"image":"jacket.jpeg"},
+  {"id":3,"name":"Ceramic Mug","category":"Home","price":299,"image":"ceramicmug.jpeg"},
+  {"id":4,"name":"Smartphone","category":"Electronics","price":13999,"image":"smartphone.jpeg"},
+  {"id":5,"name":"Running Shoes","category":"Clothing","price":3599,"image":"runningshoes.jpeg"},
+  {"id":6,"name":"Bluetooth Speaker","category":"Electronics","price":3499,"image":"bluetoothspeaker.jpeg"},
+  {"id":7,"name":"Leather Wallet","category":"Accessories","price":999,"image":"wallet.jpeg"},
+  {"id":8,"name":"Sunglasses","category":"Accessories","price":1299,"image":"sunglasses.jpeg"},
+{"id":9,"name":"Coffee Maker","category":"Home","price":4999,"image":"coffeemaker.jpeg"},
+{"id":10,"name":"Mat","category":"Home","price":799,"image":"mat.jpeg"}
+]
