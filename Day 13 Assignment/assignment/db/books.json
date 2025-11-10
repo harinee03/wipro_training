@@ -1,0 +1,46 @@
+{
+  "books": [
+    {
+      "id": "1",
+      "title": "The Alchemist",
+      "author": "Paulo Coelho",
+      "price": 299,
+      "description": "A story about a shepherd boy’s journey to discover his personal legend and follow his dreams."
+    },
+    {
+      "id": "2",
+      "title": "Atomic Habits",
+      "author": "James Clear",
+      "price": 399,
+      "description": "A guide on how small habits can lead to remarkable personal and professional transformations."
+    },
+    {
+      "id": "3",
+      "title": "Rich Dad Poor Dad",
+      "author": "Robert Kiyosaki",
+      "price": 350,
+      "description": "Lessons on money, financial freedom, and the difference between working for money and making money work for you."
+    },
+    {
+      "id": "4",
+      "title": "The Castle",
+      "author": "Franz Kafka",
+      "price": 250,
+      "description": "A surreal exploration of alienation, bureaucracy, and the human condition."
+    },
+    {
+      "id": 1762625642942,
+      "title": "Good Vibes",
+      "author": "Harinee",
+      "price": 250,
+      "description": "Newly added book by admin."
+    },
+    {
+      "id": 1762626088827,
+      "title": "Happiness",
+      "author": "Vimal",
+      "price": 500,
+      "description": "Newly added book by admin."
+    }
+  ]
+}
