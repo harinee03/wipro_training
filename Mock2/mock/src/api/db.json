@@ -1,0 +1,25 @@
+{
+  "packages": [
+    {
+      "id": 1,
+      "title": "Goa Beach Delight",
+      "details": "3 nights, 4 days stay with beachside resort.",
+      "price": 8999
+     
+    },
+    {
+      "id": 2,
+      "title": "Ooty Hills",
+      "details": "2 nights, 3 days hill stay with sightseeing.",
+      "price": 6999
+
+    },
+    {
+      "id": 3,
+      "title": "Jaipur Royal Tour",
+      "details": "Explore the forts and palaces of Jaipur.",
+      "price": 9999
+    
+    }
+  ]
+}

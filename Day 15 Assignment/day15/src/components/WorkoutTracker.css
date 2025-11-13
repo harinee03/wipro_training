@@ -1,0 +1,247 @@
+.workout-tracker {
+  background-color: var(--card-bg);
+  border-radius: 12px;
+  padding: 30px;
+  margin: 20px 0;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.workout-header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.workout-header h2 {
+  color: var(--text-color);
+  margin-bottom: 20px;
+  font-size: 2rem;
+}
+
+.workout-timer h3 {
+  color: var(--accent-color);
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+}
+
+.timer-controls {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  margin-top: 15px;
+}
+
+.rest-timer {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 20px;
+  border-radius: 8px;
+  text-align: center;
+  margin-bottom: 20px;
+  animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.02); }
+}
+
+.rest-timer h3 {
+  margin: 0 0 15px 0;
+  font-size: 1.8rem;
+}
+
+.rest-progress {
+  background-color: rgba(255, 255, 255, 0.3);
+  height: 20px;
+  border-radius: 10px;
+  overflow: hidden;
+  margin-bottom: 15px;
+}
+
+.rest-progress-bar {
+  background-color: #4CAF50;
+  height: 100%;
+  transition: width 1s linear;
+}
+
+.set-form {
+  background-color: var(--background-color);
+  padding: 20px;
+  border-radius: 8px;
+  margin-bottom: 30px;
+}
+
+.set-form h3 {
+  color: var(--text-color);
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+  color: var(--text-color);
+  font-weight: 600;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 10px;
+  border: 2px solid var(--border-color);
+  border-radius: 6px;
+  font-size: 1rem;
+  background-color: var(--card-bg);
+  color: var(--text-color);
+  transition: border-color 0.3s;
+}
+
+.form-group input:focus {
+  outline: none;
+  border-color: var(--accent-color);
+}
+
+.form-group input:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.btn {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.btn:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.btn-primary {
+  background-color: #4a90e2;
+  color: white;
+  width: 100%;
+  padding: 12px;
+  margin-top: 10px;
+}
+
+.btn-success {
+  background-color: #4CAF50;
+  color: white;
+}
+
+.btn-warning {
+  background-color: #ff9800;
+  color: white;
+}
+
+.btn-danger {
+  background-color: #f44336;
+  color: white;
+}
+
+.btn-secondary {
+  background-color: #757575;
+  color: white;
+}
+
+.btn-delete {
+  background-color: transparent;
+  color: #f44336;
+  padding: 5px 10px;
+  font-size: 1.2rem;
+}
+
+.sets-list {
+  margin: 30px 0;
+}
+
+.sets-list h3 {
+  color: var(--text-color);
+  margin-bottom: 15px;
+}
+
+.empty-message {
+  text-align: center;
+  color: var(--text-color);
+  opacity: 0.6;
+  padding: 20px;
+}
+
+.sets-table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: var(--background-color);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.sets-table th,
+.sets-table td {
+  padding: 12px;
+  text-align: left;
+  color: var(--text-color);
+}
+
+.sets-table th {
+  background-color: var(--accent-color);
+  color: white;
+  font-weight: 600;
+}
+
+.sets-table tbody tr {
+  border-bottom: 1px solid var(--border-color);
+}
+
+.sets-table tbody tr:hover {
+  background-color: var(--hover-bg);
+}
+
+.workout-stats {
+  margin-top: 30px;
+}
+
+.workout-stats h3 {
+  color: var(--text-color);
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 15px;
+}
+
+.stat-card {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  padding: 20px;
+  border-radius: 8px;
+  text-align: center;
+  color: white;
+}
+
+.stat-label {
+  display: block;
+  font-size: 0.9rem;
+  opacity: 0.9;
+  margin-bottom: 10px;
+}
+
+.stat-value {
+  display: block;
+  font-size: 2rem;
+  font-weight: bold;
+}

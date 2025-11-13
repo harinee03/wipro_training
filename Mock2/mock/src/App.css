@@ -1,0 +1,87 @@
+/* General App Styling */
+body {
+  background-color: #f9fbfd;
+  font-family: "Poppins", sans-serif;
+}
+
+/* Navbar */
+.navbar {
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Cards */
+.card {
+  border: none;
+  border-radius: 20px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.card img {
+  height: 180px;
+  object-fit: cover;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+}
+
+/* Buttons */
+.btn-primary {
+  background-color: #007bff;
+  border: none;
+}
+
+.btn-primary:hover {
+  background-color: #0056b3;
+}
+
+.btn-warning {
+  color: white;
+  font-weight: 500;
+}
+
+/* Form Styling */
+form {
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+input,
+select {
+  border-radius: 8px !important;
+}
+
+.alert-info {
+  border-radius: 10px;
+}
+
+/* Footer */
+footer {
+  background-color: #007bff;
+  color: white;
+  padding: 20px 0;
+  margin-top: 50px;
+  text-align: center;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .card {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+}
+.btn-outline-danger {
+  border-radius: 10px;
+  font-weight: 500;
+}
+
+.btn-danger {
+  border-radius: 10px;
+  font-weight: 500;
+  transition: 0.3s ease;
+}
