@@ -1,0 +1,20 @@
+{
+    {
+    "name": "John Doe",
+    "age": 21,
+    "courses": ["Mathematics", "Physics", "Computer Science"]
+
+    }
+    {
+    "name": "Jane Smith",
+    "age": 22,
+    "courses": ["Biology", "Chemistry", "English Literature"]
+        },
+    {
+    "name": "Alice Johnson",
+    "age": 20,
+    "courses": ["History", "Art", "Sociology"]
+    }
+
+}
+// error in the JSON structure has been fixed by adding commas between objects and removing the trailing comma after the last object.

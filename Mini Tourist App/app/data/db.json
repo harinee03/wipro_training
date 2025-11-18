@@ -1,0 +1,70 @@
+{
+  "packages": [
+    {
+      "id": "1",
+      "name": "Bali Paradise",
+      "location": "Indonesia",
+      "price": 12999,
+      "image": "https://images.unsplash.com/photo-1537953773345-d172ccf13cf1?w=500",
+      "description": "Experience the perfect blend of beautiful beaches, vibrant culture, and luxurious resorts.",
+      "duration": "7 days",
+      "rating": 4.8
+    },
+    {
+      "id": "2",
+      "name": "Swiss Alps",
+      "location": "Switzerland",
+      "price": 90999,
+      "image": "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=500",
+      "description": "Majestic mountains, crystal clear lakes, and charming villages await your adventure.",
+      "duration": "10 days",
+      "rating": 4.9
+    },
+    {
+      "id": "3",
+      "name": "Kyoto Cultural Tour",
+      "location": "Japan",
+      "price": 45999,
+      "image": "https://images.unsplash.com/photo-1549692520-acc6669e2f0c?w=500",
+      "description": "Discover ancient temples, traditional tea houses, and beautiful gardens in historic Kyoto.",
+      "duration": "8 days",
+      "rating": 4.7
+    },
+    {
+      "id": "4",
+      "name": "Santorini Sunset",
+      "location": "Greece",
+      "price": 15999,
+      "image": "https://images.unsplash.com/photo-1570077188670-e3a8d69ac5ff?w=500",
+      "description": "Whitewashed buildings, blue domes, and stunning sunsets in this Greek paradise.",
+      "duration": "6 days",
+      "rating": 4.8
+    }
+  ],
+  "bookings": [
+    {
+      "id": "1763207940185",
+      "fullName": "Harinee M",
+      "email": "harineemurugesh@gmail.com",
+      "phone": "9790495185",
+      "destination": "Swiss Alps",
+      "travelDate": "2025-11-29",
+      "travelers": 1,
+      "specialRequests": "",
+      "bookingDate": "2025-11-15T11:59:00.185Z",
+      "status": "confirmed"
+    },
+    {
+      "id": 1763465162617,
+      "fullName": "vimal",
+      "email": "vimal@gmail.com",
+      "phone": "56366758",
+      "destination": "Tokyo Experience",
+      "travelDate": "2025-11-21",
+      "travelers": 1,
+      "specialRequests": "",
+      "bookingDate": "2025-11-18T11:26:02.617Z",
+      "status": "confirmed"
+    }
+  ]
+}
