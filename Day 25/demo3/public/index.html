@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- Create a basics UI where user can send and receive messages in real-time along with displaying the chat history -->
+     <!-- Below are the steps 
+     Step 1: Create a container for chat messages
+     Step 2: Create an input field for typing messages 
+     Step 3: Create a button to send messages
+     Step 4: Use Socket.IO to handle real-time communication
+     Step 5: Display incoming messages in the chat container
+     -->
+     <div id="chat-container">
+        <div id="messages"></div>
+        <input type="text" id="message-input" placeholder="Type a message...">
+        <button id="send-button">Send</button>
+    </div>
+    <script src="/socket.io/socket.io.js"></script>
+    <script>
+        const socket = io();
+        const messages = document.getElementById('messages');
+        const messageInput = document.getElementById('message-input');
+        const sendButton = document.getElementById('send-button');
+        sendButton.addEventListener('click', () => {
+            const message = messageInput.value;
+            if (message) {
+                socket.emit('message', message);
+                messageInput.value = '';
+            }
+        });
+        socket.on('message', (message) => {
+            const messageElement = document.createElement('div');
+            messageElement.textContent = message;
+            messages.appendChild(messageElement);
+        });
+    </script>
+</body>
+</html>
